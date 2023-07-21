@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# React Classy Weather POC application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a small POC that was created in React and shows weather based on location.
 
 ## Available Scripts
 
