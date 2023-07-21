@@ -32,15 +32,10 @@ function formatDay(dateStr) {
   }).format(new Date(dateStr));
 }
 
-function App() {
-  const [location, setLocation] = useState("");
+function useFetchWeather(location) {
   const [isLoading, setIsLoading] = useState(false);
   const [displayLocation, setDisplayLocation] = useState("");
   const [weather, setWeather] = useState({});
-
-  useEffect(() => {
-    // Get location from localStorage
-  }, []);
 
   useEffect(() => {
     // Get weather if location changed
@@ -87,6 +82,13 @@ function App() {
 
     // Save it to localStorage
   }, [location]);
+
+  return { isLoading, displayLocation, weather };
+}
+
+function App() {
+  const [location, setLocation] = useState("");
+  const { isLoading, displayLocation, weather } = useFetchWeather(location);
 
   function handleLocationChange(location) {
     setLocation(location);
